@@ -5,6 +5,12 @@ Generated Project using Vite + react-ts. Components from MUI.
 
 ---
 
+A lot of things were rushed due to lack of time. I have also disabled tsc for build because I couldn't get to fixing the issues in time. However the app is entirely functional.
+
+---
+
+[Live on Vercel](https://kapstan.vercel.app/)
+
 ---
 
 ![Web Screenshot](github/screenshot-web.jpeg)
