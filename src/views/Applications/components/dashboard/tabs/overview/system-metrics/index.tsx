@@ -47,8 +47,8 @@ const SystemMetrics: React.FC = () => {
     const _fetchData = async () => {
       if (!selectedApp) return;
 
-      const cpuData = await fetchCpuUtilization();
-      const memData = await fetchMemoryUtilization();
+      const cpuData = await fetchCpuUtilization(selectedApp.id);
+      const memData = await fetchMemoryUtilization(selectedApp.id);
 
       setCpuData(cpuData);
       setMemData(memData);

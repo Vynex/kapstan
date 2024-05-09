@@ -5,17 +5,20 @@ import { fetchEventHistory } from "@/services/applications";
 import Divider from "@/components/Divider";
 import { getRelativeTimeString } from "@/library/datetime";
 import StatusTag from "@/components/StatusTag";
+import useApplicationsStore from "@/stores/application";
 
 const EventHistory: React.FC = () => {
   const [ eventData, setEventData ] = useState([]);
+  const selectedApp = useApplicationsStore(state => state.selectedApplication);
+
   useEffect(() => {
     const _fetchData = async () => {
-      const data = await fetchEventHistory();
+      const data = await fetchEventHistory(selectedApp?.id);
       setEventData(data);
     };
 
     _fetchData();
-  }, []);
+  }, [ selectedApp ]);
 
   return (
     <Card elevated flex={1} padding={"24px"}>
